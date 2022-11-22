@@ -12,3 +12,8 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+function writePassword() {
+  var password = prompt("Enter desired password length (between 8- 128 characters");
+  alert (password);
+}
