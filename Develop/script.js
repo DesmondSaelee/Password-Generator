@@ -43,6 +43,12 @@ function generatePassword() {
 // console logging the the string "user input = " and adding whatever length and other criteria the user has chosen.
   console.log("user input = " + userInput);
 
+// if none of the character types are chosen display alert and return.
+  if (userInput.length === 0) {
+  alert ("Please choose at least one character type");
+  return;
+  }
+
 // Added for loop to grab random  from the userInput string.
   for (var i = 0; i < passwordprompt ; i++) {
     var randomInput = Math.floor(Math.random() * userInput.length);
