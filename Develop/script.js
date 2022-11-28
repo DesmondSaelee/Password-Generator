@@ -40,19 +40,20 @@ function generatePassword() {
   if (confirmSpecialCharacters) {
     userInput = userInput.concat(specialCharacters)
   }
-
+// console logging the the string "user input = " and adding whatever length and other criteria the user has chosen.
   console.log("user input = " + userInput);
+
+// Added for loop to grab random  from the userInput string.
+  for (var i = 0; i < passwordprompt ; i++) {
+    var randomInput = Math.floor(Math.random() * userInput.length);
+    var random = userInput[randomInput];
+    userPassword = userPassword.concat(random)
+  }
+
+  // return final result.
+  return userPassword;
   
 
-
-
-
-//    else if (passwordprompt >= x && passwordprompt <= y )  ; {
-//   if ( confirm ("Include lowercase letters?") );
-//    if ( confirm ("Include uppercase letters?") );
-//     if ( confirm ("Include numbers?") );
-//      if (confirm ("Include special characters?") );
-//  };
 };
 
 // Write password to the #password input
@@ -66,10 +67,6 @@ function writePassword() {
 
 }
 
-
-// if (specialCharactersPrompt) {
-//   string.concat(specialCharacters)
-// }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
